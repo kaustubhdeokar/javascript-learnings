@@ -9,15 +9,14 @@ import { Todo } from "./todo"
 
 export class AppComponent {
   title = 'youtube-ang';
-
-  todoValue: string='';
-  list: Todo[]=[];
+  todoValue: string = '';
+  list: Todo[] = [];
 
   ngOnInit() {
     this.list = [];
     this.todoValue = "";
   }
-  
+
   addItem() {
     if (this.todoValue !== "") {
       const newItem: Todo = {
