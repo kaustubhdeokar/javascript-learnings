@@ -1,2 +1,6 @@
 # angular-works
-angular project built, want to integrate spring with frontend.
+angular projects built & in process, want to integrate spring with angular as the frontend.
+
+- [x] Todo
+- [ ] Angular and spring rest integration.
+- [ ] Reddit. 
