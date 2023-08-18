@@ -9,17 +9,16 @@
   Add a todo..
 
   <br>
-  <input type="text" class="input-text" placeholder="type todo" 
-  [(ngModule)]="todoValue"
-  (keyup.enter)="addItem()" />
+  <input type="text" class="input-text" placeholder="type a todo"
+  [(ngModel)]="todoValue"/>
 
   <button class="add-btn" (click)="addItem()">Add Todo</button>
 
   <div class="list">
     <ul>
       <li *ngFor="let item of list">
-        <input type="checkbox" name="isdone"> Task 1
-        <button class="btn" (click)="deleteItem()">Delete</button>
+        <input type="checkbox" name="isdone" [(ngModel)]="item.isDone" /> {{item.value}}
+        <button class="btn" (click)="deleteItem(item.id)">Delete</button>
       </li>
     </ul>
   </div>
