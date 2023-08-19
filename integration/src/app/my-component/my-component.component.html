@@ -1,0 +1,20 @@
+<h2>Component Table</h2>
+
+<table>
+    <thead>
+        <tr *ngIf="components.length > 0">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usr of components">
+            <td>{{usr.id}}</td>
+            <td>{{usr.name}}</td>
+            <td>{{usr.email}}</td>
+            <td>{{usr.mobile}}</td>
+        </tr>
+    </tbody>
+</table>

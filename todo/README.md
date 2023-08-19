@@ -1,3 +1,3 @@
 to execute
-> npm install
+> npm install<br>
 > ng serve --open
