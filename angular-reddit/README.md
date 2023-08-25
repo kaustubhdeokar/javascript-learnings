@@ -3,6 +3,7 @@
 > auth/login component
 
  >> shared component to make backend calls to spring boot api.
+  signup/login calls done.
 
 //todo: attach images. 
 
@@ -23,3 +24,6 @@ npm install --save ngx-toastr
 every request coming from the client after login will be required to have the jwt. 
 this can be done by http interceptor. 
 
+
+> cool resource on debugging in vscode for angular.
+https://www.c-sharpcorner.com/article/debug-angular-in-vs-code/

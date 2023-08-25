@@ -12,7 +12,6 @@ import { LoginResponse } from './auth/login/login-response.payload';
 
 export class TokenInterceptor implements HttpInterceptor {
 
-
     isTokenRefreshing = false;
     refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject(null);
 
@@ -20,28 +19,25 @@ export class TokenInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+        if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1) {
+            return next.handle(req);
+        }
+
         const jwtToken = this.authService.getJwtToken();
 
         if (jwtToken) {
-            this.addToken(req, jwtToken);
+            return next.handle(this.addToken(req, jwtToken)).pipe(catchError(error => {
+                if (error instanceof HttpErrorResponse
+                    && error.status === 403) {
+                    return this.handleAuthErrors(req, next);
+                } else {
+                    return throwError(error);
+                }
+            }));
         }
-
-        return next.handle(req).pipe(catchError(error => {
-            if (error instanceof HttpErrorResponse
-                && error.status === 403) {
-                return this.handleAuthErrors(req, next);
-            } else {
-                return throwError(error);
-            };
-        }));
+        return next.handle(req);
     }
 
-    addToken(req: HttpRequest<any>, jwtToken: any) {
-        return req.clone({
-            headers: req.headers.set('Authorization',
-                'Bearer ' + jwtToken)
-        });
-    }
 
     private handleAuthErrors(req: HttpRequest<any>, next: HttpHandler)
         : Observable<HttpEvent<any>> {
@@ -70,5 +66,11 @@ export class TokenInterceptor implements HttpInterceptor {
         }
     }
 
+    addToken(req: HttpRequest<any>, jwtToken: any) {
+        return req.clone({
+            headers: req.headers.set('Authorization',
+                'Bearer ' + jwtToken)
+        });
+    }
 
 }
