@@ -17,37 +17,36 @@ console.log('after count');
 
 // we see that these are not executed in sequence, hence can be a bit hard to track. The promise framework.
 // hence async await is one more to handle this type of scenarios. 
-
 // 2
 
 p2 = new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      resolve("resolved promise p2");
-    }, 8000);
-  });
+  setTimeout(function () {
+    resolve("resolved promise p2");
+  }, 8000);
+});
   
-  p3 = new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      resolve("resolved promise p3");
-    }, 4000);
-  });
+p3 = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    resolve("resolved promise p3");
+  }, 4000);
+});
   
-  async function handlePromises() {
-    console.log("begin");
+async function handlePromises() {
+  console.log("begin");
+
+  const p2Val = await p2;
+  console.log(p2Val);
+
+  console.log("p2 done");
+
+  const p3Val = await p3;
+  console.log(p3Val);
+
+  console.log("end");
+}
   
-    const p2Val = await p2;
-    console.log(p2Val);
   
-    console.log("p2 done");
-  
-    const p3Val = await p3;
-    console.log(p3Val);
-  
-    console.log("end");
-  }
-  
-  
-  handlePromises();
+handlePromises();
   
   // even though the output will be in order, as p2 waits for 8 seconds, p3 waits for 4 second during p2's 8 seconds.
   // hence the output is printed in order but time required is only 8 seconds and not 8+4.
