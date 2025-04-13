@@ -1,2 +1,4 @@
 ./web-dev-intro
 web-dev-intro/*
+node_modules/*
+node_modules

@@ -6,7 +6,7 @@
         "request": "launch",
         "name": "Debug with Nodemon",
         "runtimeExecutable": "nodemon",
-        "program": "${workspaceFolder}/server.js",
+        "program": "${workspaceFolder}/todo-react-express-mongo/backend/index.js",
         "restart": true,
         "console": "integratedTerminal",
         "internalConsoleOptions": "neverOpen",
