@@ -26,7 +26,7 @@ function Todos({todos}) {
         <div>
             {
                 todos.map((todo)=> {
-                        return <div id={todo._id}>
+                        return <div key={todo._id} id={todo._id}>
                             <h1>{todo.title}</h1>
                             <h2>{todo.description}</h2>
                             <h3>{todo.completed == true ? "Completed": "Mark as complete"}</h3>

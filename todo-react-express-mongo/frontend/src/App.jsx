@@ -3,11 +3,17 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import CreateTodo from "./components/CreateTodo";
 import Todos from "./components/Todos";
+import Render from "./components/Render";
+import Wrapper from "./components/Wrapper";
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [timer, setTimer] = useState(0);
 
-  useEffect(()=> {
+
+useEffect(()=> {
+
+  setInterval(()=>{
     fetch("http://localhost:3000/")
     .then(async function(res){
       const json = await res.json();
@@ -17,14 +23,18 @@ function App() {
     .catch((error)=>{
       console.log("error:", error);
     });
-  },[])
-  
+  },10000);
 
+  //use async effect.
+
+  },[])
+
+  
   return (
     <>
       <div>
-        <CreateTodo></CreateTodo>
-        <Todos todos={todos}></Todos>
+        {/* <Todos todos={todos}></Todos> */}
+        <Wrapper></Wrapper>
       </div>
     </>
   );
