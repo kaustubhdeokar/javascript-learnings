@@ -28,7 +28,6 @@ function App() {
   return (
     <>
 
-
       <Counter count={todos.length}></Counter>
       <div>
         {
