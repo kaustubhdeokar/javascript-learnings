@@ -8,3 +8,6 @@ Hooks
 
 use Effect
 - for side effects in functional comps. 
+
+useCallback
+- to memoize the function.

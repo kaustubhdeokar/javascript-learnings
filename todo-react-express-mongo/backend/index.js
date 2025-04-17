@@ -57,6 +57,7 @@ app.get("/:id", async function (req, res) {
 });
 
 app.get("/", async function (req, res) {
+  console.log("get called");
   const result = await Todo.find().exec();
   console.log(result);
   res.status(200).json({ todos: result });
