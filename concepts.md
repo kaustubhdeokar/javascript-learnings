@@ -11,3 +11,21 @@ use Effect
 
 useCallback
 - to memoize the function.
+
+useEffect
+- if any dependencies are associated, function will run whenever the dependencies are changed.
+
+useMemo
+- to memoize the value.
+- based on the dependencies, the value will be calculated.
+- if the dependencies are not changed, the value will be returned from the cache.
+
+reconcillation
+- process of updating the DOM with the latest changes. react heavy lifts this for us.
+
+useNavigate - not reloading the entire page for navigating to a new page.
+- window.location.href alternative.
+
+Lazy loading
+- as name suggests, loading the component only when it is needed.
+- react lazy and suspense are used for this.
