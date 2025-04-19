@@ -32,3 +32,12 @@ Lazy loading
 
 Prop drilling
 - doesn't mean that rendering is slow or components are re-loaded because the parameters are passed downwards.
+
+Context API
+- to avoid prop drilling. but not performant.
+
+Statement management library.
+- To avoid context API we can use recoil - state management library.
+- it works in a similar way as we use 'useState' in react.
+- but it is not a replacement for useState.
+- refer recoil-sm folder for it's use.
