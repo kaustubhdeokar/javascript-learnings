@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import CreateTodo from "./components/CreateTodo";
 import Todos from "./components/Todos";
 import Render from "./components/Render";
+
 import Wrapper from "./components/Wrapper";
 
 function App() {
@@ -33,8 +34,12 @@ useEffect(()=> {
   return (
     <>
       <div>
+<<<<<<< HEAD
         {/* <Todos todos={todos}></Todos> */}
         <Wrapper></Wrapper>
+=======
+        <Render></Render>
+>>>>>>> refs/remotes/origin/main
       </div>
     </>
   );
