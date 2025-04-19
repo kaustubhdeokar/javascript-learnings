@@ -34,12 +34,8 @@ useEffect(()=> {
   return (
     <>
       <div>
-<<<<<<< HEAD
         {/* <Todos todos={todos}></Todos> */}
         <Wrapper></Wrapper>
-=======
-        <Render></Render>
->>>>>>> refs/remotes/origin/main
       </div>
     </>
   );

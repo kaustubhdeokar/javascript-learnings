@@ -29,3 +29,6 @@ useNavigate - not reloading the entire page for navigating to a new page.
 Lazy loading
 - as name suggests, loading the component only when it is needed.
 - react lazy and suspense are used for this.
+
+Prop drilling
+- doesn't mean that rendering is slow or components are re-loaded because the parameters are passed downwards.
