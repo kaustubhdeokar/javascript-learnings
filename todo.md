@@ -1,8 +1,1 @@
-Card.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element), 
-    PropTypes.element.isRequired
-  ]),
-  title: PropTypes.string.isRequired,
-
-  
+Virtualization for long lists (react-window)

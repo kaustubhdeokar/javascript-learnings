@@ -192,7 +192,7 @@ Above is a call back function with a closure.
 When the timer gets expired for a callback function, the web api's (browser context) or c++ apis in the node context puts the callback function in the callback queue.
 Then the EVENT loop puts them into the execution stack.
 
-Same is the case with addEventListener -> when some functionality has to be executed on click. WHen the respective button is clicked, the cb function is put in the callback queue, and then the event loop puts it on the execution stack.
+Same is the case with addEventListener -> when some functionality has to be executed on click. WHen the respective button is clicked, the cb function is put in the callback queue, and then the event loop puts it on the execution stack. 
 
 ![res/event_loop.png](res/event_loop.png)
 
@@ -200,12 +200,12 @@ Same is the case with addEventListener -> when some functionality has to be exec
 
 In the above example, there are 3 things happening
 
-- Code execution
-- Fetch call
+- Code execution.
+- Fetch call.
 - Callback function with a timer.
 
   1. Browser has superpowers that are lent to JS engine to execute some tasks, these superpowers include web API's such as console, location, DOM API, setTimeout, fetch, local storage.
-n
+
   2. Callback functions and event handers are first stored in Web API environment and then transferred to callback queue.
   3. Promises and mutation observer are stored in API environment and then transferred to microtask queue.
   4. Event loop continuously observes call stack and when it is empty it transfers task to call stack.

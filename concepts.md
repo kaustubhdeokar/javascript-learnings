@@ -41,3 +41,10 @@ Statement management library.
 - it works in a similar way as we use 'useState' in react.
 - but it is not a replacement for useState.
 - refer recoil-sm folder for it's use.
+
+some weird error: 
+- Uncaught TypeError: Cannot destructure property 'ReactCurrentDispatcher' of 'import_react.default.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED' as it is undefined.
+
+Solution
+- npm install react@18 react-dom@18
+-npm install recoil@0.7.7

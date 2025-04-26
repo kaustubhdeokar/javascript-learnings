@@ -24,4 +24,43 @@ function counter() {
 // counter1();
 // counter();
 
-execute();
+// execute();
+
+
+
+function counter(){
+
+  let count = 0;
+
+  function increment(){
+    count+=1;
+    console.log(count);
+  }
+
+  function decrement(){
+    count-=1;
+    console.log(count);
+  }
+
+  return {increment, decrement};
+
+}
+
+const counter1 = counter();
+counter1.increment();
+counter1.increment();
+
+function exec(){
+
+  for (var i = 0; i < 3; i++) {
+
+    function invoke(){
+      setTimeout(function() {
+        console.log(i);
+      }, (i + 1) * 1000);
+  
+    }
+    
+  }
+
+}

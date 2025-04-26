@@ -51,6 +51,15 @@ app.post("/add", async function (req, res) {
     }
 });
 
+app.get("/notifications", async function(req, res){
+  res.status(200).json({
+    "network":Math.ceil(Math.random()*10),
+    "jobs":Math.ceil(Math.random()*12),
+    "messages":Math.ceil(Math.random()*11),
+    "notification":Math.ceil(Math.random()*9)
+  })
+})
+
 app.get("/:id", async function (req, res) {
     const result = await Todo.findById(req.params.id).exec();
     res.status(200).json({ todos: result });

@@ -1,0 +1,87 @@
+.float-example {
+  border: 3px solid #aaa;
+  background-color: #eee;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  margin: 10px;
+}
+
+.flex-container {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-evenly;
+}
+
+.box-1,
+.box-2,
+.box-3 {
+  flex: 1;
+}
+.box-1 {
+  background-color: #eee;
+}
+
+.box-2 {
+  background-color: blue;
+}
+
+.box-3 {
+  background-color: violet;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.grid-child {
+  border: 1px solid black;
+  margin: 0px;
+  padding: 0px;
+}
+
+.my-page-header {
+  grid-area: nav-header;
+  background-color: red;
+  padding: 10px;
+}
+
+.my-page-body {
+  grid-area: main-body;
+  background-color: blue;
+  height: 80%;
+  padding: 10px;
+}
+
+.my-page-sidebar {
+  grid-area: nav-side;
+  background-color: green;
+  height: 80%;
+  padding: 10px;
+}
+
+.my-page-footer {
+  grid-area: footer;
+  background-color: yellow;
+  padding: 10px;
+}
+
+body{
+  height:100%;
+}
+
+.my-page {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas:
+    "nav-header  nav-header  nav-header"
+    "main-body main-body nav-side "
+    "footer footer footer";
+    height: 100vh;
+}
