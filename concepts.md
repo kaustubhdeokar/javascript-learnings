@@ -1,3 +1,25 @@
+Named exports
+- export function name(){---}
+
+Default exports
+- export default function 
+
+One file can have at max only one default export, but many named export.
+While importing we can change the name of default export but not named export.
+
+HTML to JSX can be done with some changes 
+- stricter tag closing. 
+- camel case attributes for tags. classNames 
+- a single wrapping element (Fragment), because JSX is converted to javascript and from a function of javascript we can return only one object , unless it's wrapped in an array, hence the element wrapping.
+
+A single {} in JSX - for strings, function calls. 
+```
+<h1>To Do List for {formatDate(today)}</h1>
+```
+
+A double curlies. {{}}
+passing objects, or style definitions for jsx tags.
+
 Side effects
 - Anything not related to rendering of components are called as side effects.
 - operations can interact with browser (set inner html), fetch data (fetch call)
